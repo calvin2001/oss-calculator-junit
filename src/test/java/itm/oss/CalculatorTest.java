@@ -50,9 +50,4 @@ class CalculatorTest {
         assertEquals(5, calc.add(2, 3), "2 + 3 should be 5"); // 통과
     }
 
-    @Test
-    @DisplayName("Intentionally failing test")
-    void addWrongResult() {
-        assertEquals(6, calc.add(2, 3), "2 + 3 is not 6 (intentional error)"); // 실패
-    }
 }
