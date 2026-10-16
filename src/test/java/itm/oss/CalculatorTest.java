@@ -1,14 +1,9 @@
 package itm.oss;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Calculator tests for OSS class")
 class CalculatorTest {
@@ -50,15 +45,14 @@ class CalculatorTest {
     }
 
     @Test
+    @DisplayName("Add two numbers")
     void addTwoNumbers() {
-        Calculator calc = new Calculator();
-        assertEquals(5, calc.add(2, 3)); // 2 + 3 = 5 → 통과
+        assertEquals(5, calc.add(2, 3), "2 + 3 should be 5"); // 통과
     }
 
     @Test
-    void isFourPrime() {
-        Calculator calc = new Calculator();
-        assertTrue(calc.isPrime(4), "4 is not prime."); // 4는 소수가 아님 → 실패
+    @DisplayName("Intentionally failing test")
+    void addWrongResult() {
+        assertEquals(6, calc.add(2, 3), "2 + 3 is not 6 (intentional error)"); // 실패
     }
-
 }
